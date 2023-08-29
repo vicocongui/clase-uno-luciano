@@ -2,7 +2,7 @@ import React from "react";
 
 export const Navbar = () => {
   return (
-    <div className="w-full flex  px-10 bg-gray-200 h-10 items-center justify-between fixed z-20">
+    <div className="w-full flex  px-10 bg-gray-200 h-10 items-center justify-between fixed z-10">
       <div>Logo</div>
       <div>
         <button className="block lg:hidden">Hamburg</button>
