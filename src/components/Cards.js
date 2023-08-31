@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { AiOutlineArrowRight, AiOutlineSmallDash } from "react-icons/ai";
 import Modal from "react-modal";
-const Cards = () => {
+
+const Cards = ({ character }) => {
+  console.log(character);
   const [modalIsOpen, setIsOpen] = useState();
 
   function openModal() {
@@ -14,7 +16,7 @@ const Cards = () => {
 
   const customStyles = {
     overlay: {
-      backgroundColor: "rgba(0, 0, 0, 0.75)", 
+      backgroundColor: "rgba(0, 0, 0, 0.75)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -36,7 +38,7 @@ const Cards = () => {
   return (
     <div className="bg-white w-full mx-auto h-[400px] text-black flex flex-col justify-between relative">
       <img
-        src="https://picsum.photos/200/300"
+        src={character.image}
         alt=""
         className="w-full h-full object-cover "
       />
@@ -45,7 +47,8 @@ const Cards = () => {
         className=" absolute p-2 py-4 flex flex-col justify-end items-center text-center w-full  h-full bg-gray-800/60 cursor-pointer"
       >
         <div className="flex flex-col items-center justify-center">
-          <h3 className="text-4xl text-white">Titulo 2</h3>
+          <h3 className="text-4xl text-white">{character.name}</h3>
+          <p>{character.gender}</p>
           <AiOutlineArrowRight className=" h-8 w-full text-white" />
         </div>
       </div>
@@ -57,7 +60,7 @@ const Cards = () => {
       >
         <div className="flex mx-auto justify-center items-center h-[60vh]">
           <img
-            src="https://picsum.photos/200/300"
+            src={character.image}
             alt=""
             className="w-[40%] h-[60vh] object-cover"
           />
@@ -67,7 +70,6 @@ const Cards = () => {
             <p>Hola hola </p>
             <p>Hola hola </p>
             <p>Hola hola </p>
-            
           </div>
         </div>
       </Modal>
